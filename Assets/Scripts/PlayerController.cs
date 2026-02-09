@@ -8,11 +8,13 @@ public class PlayerController : MonoBehaviour
     // Movement-related
     private float _movementX;
     private float _movementY;
-    public float speed;
+    public float speed = 5;
 
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        
     }
 
     void OnMove(InputValue movementValue)
@@ -25,7 +27,6 @@ public class PlayerController : MonoBehaviour
         // Create a 3D movement vector using the X and Y inputs.
         Vector3 movement = new Vector3 (_movementX, 0.0f, _movementY) * speed;
         _rigidbody.linearVelocity = movement;
-        _rigidbody.linearVelocity = Vector3.Lerp(_rigidbody.linearVelocity, movement, 0.2f);
 
         
     }
