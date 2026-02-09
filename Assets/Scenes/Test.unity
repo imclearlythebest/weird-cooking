@@ -139,6 +139,10 @@ PrefabInstance:
       propertyPath: itemName
       value: Banana
       objectReference: {fileID: 0}
+    - target: {fileID: 2796869878552162111, guid: 76a2ea47fcaf0204d8c6ea709e340c2c, type: 3}
+      propertyPath: itemType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4330697086673874932, guid: 76a2ea47fcaf0204d8c6ea709e340c2c, type: 3}
       propertyPath: m_TagString
       value: Buy
@@ -1271,7 +1275,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2796869878552162111, guid: 76a2ea47fcaf0204d8c6ea709e340c2c, type: 3}
       propertyPath: itemName
-      value: Apple
+      value: Unnamed Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796869878552162111, guid: 76a2ea47fcaf0204d8c6ea709e340c2c, type: 3}
+      propertyPath: m_EditorClassIdentifier
+      value: Assembly-CSharp::ShopItemDetails
       objectReference: {fileID: 0}
     - target: {fileID: 4330697086673874932, guid: 76a2ea47fcaf0204d8c6ea709e340c2c, type: 3}
       propertyPath: m_TagString

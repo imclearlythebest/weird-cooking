@@ -2,6 +2,6 @@ using UnityEngine;
 
 public class ShopItemDetails : MonoBehaviour
 {
-    public string itemName = "Unnamed Item";
-    public float price = 10;
+    public Item.ItemType itemType ;
+    public float price;
 }
