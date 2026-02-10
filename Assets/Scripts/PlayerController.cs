@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -14,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 5;
     
     private Inventory _playerInventory;
-
+    private List<GameObject> _inVicinity = new List<GameObject>();
     void Start()
     {
         _playerInventory = InitializeInventory();
@@ -32,6 +33,15 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 movement = new Vector3 (_movementX, 0.0f, _movementY) * speed;
         _rigidbody.linearVelocity = movement;
+    }
+
+    void OnTalk(InputValue value)
+    {
+        if (value.isPressed && _inVicinity.Count > 0)
+        {
+            GameObject talkTo = _inVicinity[_inVicinity.Count - 1];
+            Debug.Log("Talking to " + talkTo.name);
+        }
     }
 
     void OnCollisionEnter(Collision collision)
@@ -97,6 +107,30 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("NPC"))
+        {
+            GameObject npc = other.gameObject;
+            GameObject npcNameTag = npc.transform.GetChild(0).gameObject;
+            
+            _inVicinity.Add(npc);
+            npcNameTag.SetActive(true);
+        }
+    }
+    
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("NPC"))
+        {
+            GameObject npc = other.gameObject;
+            GameObject npcNameTag = npc.transform.GetChild(0).gameObject;
+            
+            _inVicinity.Remove(npc);
+            npcNameTag.SetActive(false);
+        }
+    }
+    
     Inventory InitializeInventory()
     {
         string path = Application.persistentDataPath + "/inventory.json";

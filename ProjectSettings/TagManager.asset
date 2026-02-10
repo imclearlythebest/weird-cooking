@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Buy
   - Sell
+  - ShopItem
+  - NPC
   layers:
   - Default
   - TransparentFX
