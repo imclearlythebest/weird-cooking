@@ -37,14 +37,13 @@ public class PlayerController : MonoBehaviour
         _rigidbody.linearVelocity = movement;
     }
 
-    void OnTalk(InputValue value)
+    void OnInteract(InputValue value)
     {
         if (value.isPressed && _inVicinity.Count > 0)
         {
-            GameObject talkTo = _inVicinity[_inVicinity.Count - 1];
-            Debug.Log("Talking to " + talkTo.name);
-            dialogueUI.gameObject.SetActive(true);
-            
+            GameObject highlighted = _inVicinity[_inVicinity.Count - 1];
+            IInteractable interactable = highlighted.GetComponent<IInteractable>();
+            interactable.Interact();
         }
     }
 
