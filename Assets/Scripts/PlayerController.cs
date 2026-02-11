@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     
     private Inventory _playerInventory;
     private List<GameObject> _inVicinity = new List<GameObject>();
+    
+    public GameObject dialogueUI;
     void Start()
     {
         _playerInventory = InitializeInventory();
@@ -41,6 +43,8 @@ public class PlayerController : MonoBehaviour
         {
             GameObject talkTo = _inVicinity[_inVicinity.Count - 1];
             Debug.Log("Talking to " + talkTo.name);
+            dialogueUI.gameObject.SetActive(true);
+            
         }
     }
 
