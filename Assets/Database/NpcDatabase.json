@@ -1,0 +1,60 @@
+{
+    "npcs": [
+        {
+            "npcID": 0,
+            "npcName": "Stranger",
+            "npcRole": "Unknown",
+            "npcDefaultDialogue": [
+                "What do you want?"
+            ],
+            "npcIntroduction": [
+                "Hello there"
+            ],
+            "npcMet": false
+        },
+        {
+            "npcID": 0,
+            "npcName": "Farhan",
+            "npcRole": "Producer",
+            "npcDefaultDialogue": [
+                "Have you seen Kkusum anywhere?"
+            ],
+            "npcIntroduction": [
+                "Hey, I am a producer at Bungaur",
+                "Hmmm, I miss Kkusum"
+            ],
+            "npcMet": false
+        },
+        {
+            "npcID": 0,
+            "npcName": "Aurshi",
+            "npcRole": "Developer",
+            "npcDefaultDialogue": [
+                "Whyyyyyyyyy?",
+                "Why did I pick CSE??"
+            ],
+            "npcIntroduction": [
+                "Hi, I'm Aurshi.",
+                "I do software shit.",
+                "I hate my job."
+            ],
+            "npcMet": false
+        },
+        {
+            "npcID": 0,
+            "npcName": "Bangla",
+            "npcRole": "Developer",
+            "npcDefaultDialogue": [
+                "*Mumbles incoherently*"
+            ],
+            "npcIntroduction": [
+                "The problem isn't that we can't find Kkusum",
+                "The problem lies within this gun. Basically, it doesn’t have a good barrel.",
+                "So the plastic ...",
+                "... I think I will just open it up and give this a modern rubberized...",
+                "*Keeps on rambling mindlessly*"
+            ],
+            "npcMet": true
+        }
+    ]
+}

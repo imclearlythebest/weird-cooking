@@ -41,10 +41,28 @@ public class PlayerController : MonoBehaviour
     {
         if (value.isPressed && _inVicinity.Count > 0)
         {
-            GameObject highlighted = _inVicinity[_inVicinity.Count - 1];
-            IInteractable interactable = highlighted.GetComponent<IInteractable>();
+            GameObject closest = FindClosest(_inVicinity, transform.position);
+            
+            IInteractable interactable = closest.GetComponent<IInteractable>();
             interactable.Interact();
         }
+    }
+    
+    GameObject FindClosest(List<GameObject> list, Vector3 from)
+    {
+        GameObject closest = null;
+        float minDistSq = float.MaxValue;
+
+        foreach (var obj in list)
+        {
+            float d = (obj.transform.position - from).sqrMagnitude;
+            if (d < minDistSq)
+            {
+                minDistSq = d;
+                closest = obj;
+            }
+        }
+        return closest;
     }
 
     void OnCollisionEnter(Collision collision)

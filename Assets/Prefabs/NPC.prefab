@@ -359,7 +359,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78575cdd0edb2942bf2a47b5200bfdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  npcName: 
-  npcRole: 
-  npcDialogue: 
-  dialogueUI: {fileID: 0}
+  npcId: 0
