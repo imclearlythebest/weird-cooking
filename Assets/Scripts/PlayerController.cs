@@ -130,25 +130,25 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("NPC"))
+        if (other.gameObject.CompareTag("Interactable"))
         {
-            GameObject npc = other.gameObject;
-            GameObject npcNameTag = npc.transform.GetChild(0).gameObject;
+            GameObject interactable = other.gameObject;
+            GameObject nameTag = interactable.transform.GetChild(0).gameObject;
             
-            _inVicinity.Add(npc);
-            npcNameTag.SetActive(true);
+            _inVicinity.Add(interactable);
+            nameTag.SetActive(true);
         }
     }
     
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("NPC"))
+        if (other.gameObject.CompareTag("Interactable"))
         {
-            GameObject npc = other.gameObject;
-            GameObject npcNameTag = npc.transform.GetChild(0).gameObject;
+            GameObject interactable = other.gameObject;
+            GameObject nameTag = interactable.transform.GetChild(0).gameObject;
             
-            _inVicinity.Remove(npc);
-            npcNameTag.SetActive(false);
+            _inVicinity.Remove(interactable);
+            nameTag.SetActive(false);
         }
     }
     

@@ -8,6 +8,7 @@ TagManager:
   - Sell
   - ShopItem
   - NPC
+  - Interactable
   layers:
   - Default
   - TransparentFX
